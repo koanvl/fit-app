@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body text-gray-500;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-heading text-gray-800 font-bold;
+  }
+
+  h1 {
+    @apply text-[80px];
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl
+  }
+
+  h4 {
+    @apply text-2xl
+  }
+  h5 {
+    @apply text-xl
+  }
+
+  .container {
+    @apply !max-w-[1140px]
+  }  
+
+  .notice {
+    @apply text-blue-100
+  }
+
+  .alert {
+    @apply text-yellow-700
+  }
+
+  .error {
+    @apply text-red-700
+  }
+
+  .success {
+    @apply text-green-500
+  }
+}
+@import 'actiontext.css';

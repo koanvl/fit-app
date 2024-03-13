@@ -1,0 +1,43 @@
+<%= form_with model: @recipe, local: true, data: { turbo: false }, html: { class: "text-gray-800" } do |form| %>
+<%= render "shared/errors", object: @recipe %>
+  <div class="mb-10">
+    <%= form.label :title, "Recipe Name", class: "block text-2xl font-bold mb-2" %>
+    <%= form.text_field :title, placeholder: "Recipe Name", class: "border border-gray-50/50 text-gray-800 sm:text-sm rounded focus:ring-gray-50/80 focus:border-gray-50/80 block w-full p-2.5 placeholder:text-gray-300" %>
+  </div>
+   <div class="mb-10">
+     <div class="field" data-controller="tom-select">
+    <%= form.label :tags %>
+    <%= form.select :tag_ids, Tag.all.pluck(:title, :id), {}, { multiple: true, id: "select-tags" } %>
+  </div>
+  </div>
+  <div class="mb-10">
+    <%= form.label :category_id, class: "block text-2xl font-bold mb-2"  %>
+    <%= form.collection_select :category_id, @categories, :id, :title, { prompt: "Select category" }, { class: 'border border-gray-50/50 text-gray-800 sm:text-sm rounded focus:ring-gray-50/80 focus:border-gray-50/80 block w-full p-2.5 placeholder:text-gray-300', selected: @recipe.category_id } %>
+  </div>
+  <div class="mb-10">
+  <%= form.label :image, "Add Cover Image", class: "block text-2xl font-bold mb-2" %>
+    <%= form.file_field :image, class: "block w-full text-sm text-gray-900 border border-gray-50/50 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none" %>
+  </div>
+
+  <div class="mb-10 w-full flex justify-between items-center gap-4 flex-nowrap">
+    <div class="w-1/2">
+      <%= form.label :portions, "Servings", class: "block text-2xl font-bold mb-2"  %>
+      <%= form.number_field  :portions, placeholder: "4", class: "border border-gray-50/50 text-gray-800 sm:text-sm rounded focus:ring-gray-50/80 focus:border-gray-50/80 block w-full p-2.5 placeholder:text-gray-300"  %>
+      <p class=" text-xs mt-2 text-gray-300">*Add number of servings</p>
+    </div>
+
+    <div class="w-1/2">
+      <%= form.label :cooking_duration, "Cooking Time", class: "block text-2xl font-bold mb-2" %>
+      <%= form.number_field :cooking_duration, placeholder: "30", class: "border border-gray-50/50 text-gray-800 sm:text-sm rounded focus:ring-gray-50/80 focus:border-gray-50/80 block w-full p-2.5 placeholder:text-gray-300" %>
+      <p class=" text-xs mt-2 text-gray-300">*Add the estimated time in minutes</p>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <%= form.label :description, "Recipe Description", class: "block text-2xl font-bold" %><br>
+    <%= form.rich_text_area :description, class: "min-h-80 border-gray-50/50" %>
+  </div>  
+  <div class="flex justify-end">
+  <%= form.submit "Submit Recipe", class: "text-white bg-primary-500 hover:bg-primary-600 focus:ring-0 focus:outline-none rounded w-full sm:w-56 px-5 py-2.5 text-center cursor-pointer" %>
+  </div>
+<% end %>
