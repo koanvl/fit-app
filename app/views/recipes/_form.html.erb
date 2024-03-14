@@ -6,7 +6,7 @@
   </div>
    <div class="mb-10">
      <div class="field" data-controller="tom-select">
-    <%= form.label :tags %>
+    <%= form.label :tags, class: "block text-2xl font-bold mb-2" %>
     <%= form.select :tag_ids, Tag.all.pluck(:title, :id), {}, { multiple: true, id: "select-tags" } %>
   </div>
   </div>
