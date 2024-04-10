@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_10_150946) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_10_085839) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,13 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_150946) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "authors", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_authors_on_user_id"
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -79,9 +72,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_150946) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "author_id"
-    t.index ["author_id"], name: "index_recipes_on_author_id"
+    t.integer "user_id"
     t.index ["category_id"], name: "index_recipes_on_category_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -104,9 +97,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_150946) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "authors", "users"
   add_foreign_key "recipe_tags", "recipes"
   add_foreign_key "recipe_tags", "tags"
-  add_foreign_key "recipes", "authors"
   add_foreign_key "recipes", "categories"
+  add_foreign_key "recipes", "users"
 end
