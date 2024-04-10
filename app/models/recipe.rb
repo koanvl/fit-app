@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Recipe < ApplicationRecord
+  belongs_to :user
   belongs_to :category
   has_many :recipe_tags, dependent: :destroy
   has_many :tags, through: :recipe_tags

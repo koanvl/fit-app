@@ -12,18 +12,18 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = if params[:category_id].present?
-                 Recipe.where(category_id: params[:category_id])
+                current_user.recipes.where(category_id: params[:category_id])
                else
-                 Recipe.all
+                 current_user.recipes
                end
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.new
   end
 
   def edit
@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new recipe_params
+    @recipe = current_user.recipes.new recipe_params
 
     if @recipe.save
       redirect_to recipe_path(@recipe)
@@ -58,7 +58,7 @@ class RecipesController < ApplicationController
   end
 
   def set_recipe!
-    @recipe = Recipe.find(params[:id])
+    @recipe = current_user.recipes.find(params[:id])
   end
 
   def fetch_recipes
