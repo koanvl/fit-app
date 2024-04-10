@@ -7,6 +7,9 @@ import { application } from "./application"
 import AlertController from "./alert_controller"
 application.register("alert", AlertController)
 
+import CarouselController from "./carousel_controller"
+application.register("carousel", CarouselController)
+
 import CategoryAutosubmitController from "./category_autosubmit_controller"
 application.register("category-autosubmit", CategoryAutosubmitController)
 

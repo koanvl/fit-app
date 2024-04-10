@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   
   before_action :authenticate_user!
 
-  before_action :set_recipe!, only: %i[show edit update]
+  before_action :set_recipe!, only: %i[edit update]
   before_action :fetch_categories
   before_action :fetch_recipes
   before_action :fetch_tags
@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
