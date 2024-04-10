@@ -2,8 +2,6 @@
 
 class RecipesController < ApplicationController
   include RecipeHelper
-  
-  before_action :authenticate_user!
 
   before_action :set_recipe!, only: %i[edit update]
   before_action :fetch_categories
