@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root 'recipes#index'
+  root 'pages#main'
 
   resource :drafts do
     get :guide
+  end
+
+  resource :pages do
+    get :main
   end
 
   resources :recipes
