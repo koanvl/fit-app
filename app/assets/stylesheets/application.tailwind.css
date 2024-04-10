@@ -7,7 +7,7 @@
     @apply font-body text-gray-500;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-heading text-gray-800 font-bold;
   }
 
@@ -28,6 +28,10 @@
   }
   h5 {
     @apply text-xl
+  }
+
+  h6 {
+    @apply text-lg
   }
 
   .container {

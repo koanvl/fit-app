@@ -17,11 +17,7 @@ module.exports = {
         xl: '1280px',
       },
       backgroundImage: {
-        "top-poster": 'url(CashForYourMac_New_Product_images_2024_2.png)',
-        "top-crop": 'url(bg_girl.png)',
-        "top-poster-pattern": 'url(top_poster.png)',
-        "offer-bg": 'url(offer_image.png)',
-        "promo": 'url(CashForYourMac_New_Product_images_2024_2.png)'
+        "main-sidebar": 'url(sidebar-cta-2.jpg)',
       },
       colors: {
         'primary': {
