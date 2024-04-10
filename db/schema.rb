@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_10_150845) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_10_150946) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -79,6 +79,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_150845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_recipes_on_author_id"
     t.index ["category_id"], name: "index_recipes_on_category_id"
   end
 
@@ -105,5 +107,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_150845) do
   add_foreign_key "authors", "users"
   add_foreign_key "recipe_tags", "recipes"
   add_foreign_key "recipe_tags", "tags"
+  add_foreign_key "recipes", "authors"
   add_foreign_key "recipes", "categories"
 end
