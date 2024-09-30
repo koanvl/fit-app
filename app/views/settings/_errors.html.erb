@@ -1,0 +1,11 @@
+<% if user.errors.any? %>
+  <div id="error_explanation" class="col-span-4 bg-red-50 text-red-500 text-sm px-3 py-2 font-medium rounded-lg my-3">
+    <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+    <ul class="pl-[17px]">
+      <% user.errors.each do |error| %>
+        <li class="list-disc"><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
