@@ -24,7 +24,7 @@
       <div class="w-[calc(12.5%-32px)]"></div>
       <div class="w-[calc(25%-32px)]">
         <h5 class="text-white mb-4">Recent Recipes</h5>
-        <%= link_to recipe_path(@first_recipe) do %>
+        <%= link_to recipe_path(@first_recipe.id) do %>
           <div class="flex gap-2 items-center mb-6">
             <div class="w-20 h-20 shrink-0 relative">
               <%= image_tag @first_recipe.image.variant(:thumb), class: "absolute w-full h-full object-cover transition-all duration-500 z-0" %>
@@ -36,7 +36,7 @@
           </div>
         <% end %>
 
-        <%= link_to recipe_path(@last_recipe) do %>
+        <%= link_to recipe_path(@last_recipe.id) do %>
           <div class="flex gap-2 items-center mb-6">
             <div class="w-20 h-20 shrink-0 relative">
               <%= image_tag @last_recipe.image.variant(:thumb), class: "absolute w-full h-full object-cover transition-all duration-500 z-0" %>
