@@ -36,7 +36,7 @@ class SettingsController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :name)
   end
 
   def user_settings
