@@ -7,7 +7,7 @@
           <div class="space-y-8">
             <h1 class="text-[60px] leading-[72px] text-white">Welcome to Recipe Community</h1>
             <p class="lg:px-16">Proin eget tortor risus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-            <%= link_to "View Recipes", "#", class: "block text-white bg-primary-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-6 py-2 lg:py-2.5 w-fit dark:bg-primary-600 dark:hover:bg-primary-500 focus:outline-none dark:focus:ring-primary-800 mx-auto" %>
+            <%= link_to "View Recipes", search_path, class: "block text-white bg-primary-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-6 py-2 lg:py-2.5 w-fit dark:bg-primary-600 dark:hover:bg-primary-500 focus:outline-none dark:focus:ring-primary-800 mx-auto" %>
           </div>
         </div>
         <div class="absolute top-0 left-0 w-full h-full z-[10] bg-black/60"></div>
@@ -18,7 +18,7 @@
           <div class="space-y-8">
             <h1 class="text-[60px] leading-[72px] text-white">Welcome to Recipe Community</h1>
             <p class="lg:px-16">Proin eget tortor risus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
-            <%= link_to "View Recipes", "#", class: "block text-white bg-primary-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-6 py-2 lg:py-2.5 w-fit dark:bg-primary-600 dark:hover:bg-primary-500 focus:outline-none dark:focus:ring-primary-800 mx-auto" %>
+            <%= link_to "View Recipes", search_path, class: "block text-white bg-primary-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-6 py-2 lg:py-2.5 w-fit dark:bg-primary-600 dark:hover:bg-primary-500 focus:outline-none dark:focus:ring-primary-800 mx-auto" %>
           </div>
         </div>
         <div class="absolute top-0 left-0 w-full h-full z-[10] bg-black/60"></div>
@@ -78,7 +78,7 @@
       <div class="w-8/12">
         <div class="pb-6 mb-6 border-b border-gray-50/50">
           <h3>Featured Recipes</h3>
-        </div>
+        </div>        
         <div data-controller="carousel" data-carousel-options-value='{"slidesPerView": 3, "spaceBetween": 24, "navigation": {"nextEl": ".carousel-button-next", "prevEl": ".carousel-button-prev"}}' class="swiper-container relative mb-10">
           <div class="swiper-wrapper">
             <% @recipes.each do |recipe| %>

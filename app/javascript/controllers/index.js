@@ -7,6 +7,9 @@ import { application } from "./application"
 import AlertController from "./alert_controller"
 application.register("alert", AlertController)
 
+import AutoclickController from "./autoclick_controller"
+application.register("autoclick", AutoclickController)
+
 import CarouselController from "./carousel_controller"
 application.register("carousel", CarouselController)
 
@@ -21,3 +24,6 @@ application.register("sticky-header", StickyHeaderController)
 
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+
+import TurboController from "./turbo_controller"
+application.register("turbo", TurboController)

@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resources :tags, only: :create
 
   resource :settings
+
+  resource :search, only: :show, controller: 'search'
 end

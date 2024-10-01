@@ -1,0 +1,9 @@
+ <% @recipes.each do |recipe| %>
+    <%= render "search/recipe", recipe: recipe %>
+  <% end %>
+
+  <% if pagy.next.present? %>
+  <%= link_to"Show more properties", pagy_url_for(pagy, pagy.next), id: "next_link",
+             class: "w-full text-white font-medium rounded-lg sm:text-sm px-5 py-2.5 text-center mx-4 mb-4",
+             data: {controller: "turbo autoclick",}%>
+<% end %>

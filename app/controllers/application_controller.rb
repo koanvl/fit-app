@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include ErrorHandling
+  include Pagy::Backend
   before_action :set_first_recipe, :set_last_recipe
 
   private

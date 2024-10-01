@@ -53,5 +53,9 @@
   .success {
     @apply text-green-500
   }
+
+  .category-checkbox:checked + label {
+    @apply bg-primary-500 border-primary-500 text-white
+  }
 }
 @import 'actiontext.css';
